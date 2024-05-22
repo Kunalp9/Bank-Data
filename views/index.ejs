@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">  
+</head>
+<body>
+    <div id="container">
+        <form id="myForm" method="post">
+            <label for="input">Enter the IFSC Code here: </label>
+            <input type="text" placeholder="YESB0DNB002" id="input" name="ifsc">
+            <input type="submit" value="Find Out" id="submit" formaction="/">
+            <div id="display" >
+                <% if( content == ""){ %>
+                    <p>Enter the IFSC to view...</p>
+                <% } else {%>
+                    <h2>
+                        <%= content.BRANCH %>
+                    </h2>
+                    <div id="bankDetails">
+                        <p>
+                            Bank: <%= content.BANK %>
+                        </p>
+                        <p>
+                            Centre: <%=content.CENTRE %>
+                        </p>
+                        <p>
+                            District: <%= content.DISTRICT %>
+                        </p>
+                        <p>
+                            State: <%= content.STATE %>
+                        </p>
+                        <p>
+                            Address: <%= content.ADDRESS %>
+                        </p>
+                        <p>
+                            Contact No.: <%= content.CONTACT %>
+                        </p>
+                        <p>
+                            City: <%= content.CITY %>
+                        </p>
+                        <p>
+                            MICR: <%= content.MICR %>
+                        </p>    
+                        <p>
+                            Bank Code: <%= content.BANKCODE %>
+                        </p>    
+                        <p>
+                            IFSC: <%= content.IFSC %>
+                        </p>    
+                    </div>
+                <%}%>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>
